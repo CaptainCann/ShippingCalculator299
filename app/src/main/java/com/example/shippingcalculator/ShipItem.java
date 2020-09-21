@@ -28,11 +28,12 @@ public class ShipItem {
     public Double getAddedCost() {
         if (weight > BASE_WEIGHT) {
             Double overage = (weight - BASE_WEIGHT);
-            return Math.ceil(overage / 4 * ADDED);
-        }
-        return 0.0;
+            return Math.ceil(overage / 4) * ADDED;
 
-    }
+        }
+
+        return 0.0;
+}
 
     public Double getTotalCost(){
         return getBaseCost() + getAddedCost();
